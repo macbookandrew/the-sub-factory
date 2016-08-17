@@ -22,8 +22,9 @@ function add_custom_css() {
         $background_color_array = hex2rgb( $background_color );
         $background_color_rgb = $background_color_array['red'] . ',' . $background_color_array['green'] . ',' . $background_color_array['blue'];
 
-        $custom_styles = '.erm_menu {color:' . esc_attr( $page_background_color ) . ';}
+        $custom_styles = '.erm_menu, .erm_product_desc {color:' . esc_attr( $page_background_color ) . ';}
         .erm_menu:before {background-color: rgba(' . $background_color_rgb . ',0.5);}
+        .erm_menu:not(.type-erm_menu) {border-top-color: ' . $background_color . ';}
         ';
 
         // loop over posts
