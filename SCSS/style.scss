@@ -2481,6 +2481,12 @@ body.search-no-results .page-header {
     .erm_footer_desc { border: none; }
 }
 
+.erm_product {
+    padding: 2em;
+
+    &_desc { font-size: 14px; }
+}
+
 .ninja-forms-cont {
     clear: both;
     padding-top: 2em;

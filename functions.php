@@ -18,14 +18,18 @@ function add_custom_css() {
     // The Loop
     if ( $style_query->have_posts() ) {
         $background_color = '#' . get_theme_mod( 'background_color' );
+        $main_text_color = get_theme_mod( 'main_text_color' );
         $page_background_color = get_theme_mod( 'page_background_color' );
         $background_color_array = hex2rgb( $background_color );
         $background_color_rgb = $background_color_array['red'] . ',' . $background_color_array['green'] . ',' . $background_color_array['blue'];
+        $main_text_color_array = hex2rgb( $main_text_color );
+        $main_text_color_rgb = $main_text_color_array['red'] . ',' . $main_text_color_array['green'] . ',' . $main_text_color_array['blue'];
 
         $custom_styles = '.erm_menu, .erm_product_desc {color:' . esc_attr( $page_background_color ) . ';}
         .erm_menu:before {background-color: rgba(' . $background_color_rgb . ',0.5);}
         .erm_menu:not(.type-erm_menu) {border-top-color: ' . $background_color . ';}
         .ninja-forms-cont {background-color: ' . $background_color . ';}
+        .erm_product:nth-child(odd) {background-color: rgba(' . $main_text_color_rgb . ', 0.3);}
         ';
 
         // loop over posts
