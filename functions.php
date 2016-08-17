@@ -5,9 +5,6 @@ function add_custom_css() {
     wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/style.min.css' );
     wp_dequeue_style( 'twentysixteen-style' );
 
-    // get menu and form styling
-    $custom_styles = '';
-
     // query arguments
     $style_args = array (
         'post_type'              => array( 'erm_menu', 'nf_sub' ),
@@ -20,12 +17,23 @@ function add_custom_css() {
 
     // The Loop
     if ( $style_query->have_posts() ) {
+        $background_color = '#' . get_theme_mod( 'background_color' );
+        $page_background_color = get_theme_mod( 'page_background_color' );
+        $background_color_array = hex2rgb( $background_color );
+        $background_color_rgb = $background_color_array['red'] . ',' . $background_color_array['green'] . ',' . $background_color_array['blue'];
+
+        $custom_styles = '.erm_menu {color:' . esc_attr( $page_background_color ) . ';}
+        .erm_menu:before {background-color: rgba(' . $background_color_rgb . ',0.5);}
+        ';
+
+        // loop over posts
         while ( $style_query->have_posts() ) {
             $style_query->the_post();
 
             // custom background color
             if ( get_field( 'background_color' ) ) {
-                $custom_styles .= '.post-id-' . get_the_ID() . ' {background-color:' . get_field( 'background_color' ) . ';}' . "\n";
+                $custom_styles .= '.post-id-' . get_the_ID() . ' {background-color:' . get_field( 'background_color' ) . ';}
+                .post-id-' . get_the_ID() . ':before {display:none;}' . "\n";
             }
 
             // custom background image
@@ -38,3 +46,21 @@ function add_custom_css() {
     wp_add_inline_style( 'theme-style', $custom_styles );
 }
 add_action( 'wp_enqueue_scripts', 'add_custom_css', 50 );
+
+// convert hex to rgb
+function hex2rgb( $colour ) {
+    if ( $colour[0] == '#' ) {
+        $colour = substr( $colour, 1 );
+    }
+    if ( strlen( $colour ) == 6 ) {
+        list( $r, $g, $b ) = array( $colour[0] . $colour[1], $colour[2] . $colour[3], $colour[4] . $colour[5] );
+    } elseif ( strlen( $colour ) == 3 ) {
+        list( $r, $g, $b ) = array( $colour[0] . $colour[0], $colour[1] . $colour[1], $colour[2] . $colour[2] );
+    } else {
+        return false;
+    }
+    $r = hexdec( $r );
+    $g = hexdec( $g );
+    $b = hexdec( $b );
+    return array( 'red' => $r, 'green' => $g, 'blue' => $b );
+}
