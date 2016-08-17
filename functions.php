@@ -25,6 +25,7 @@ function add_custom_css() {
         $custom_styles = '.erm_menu, .erm_product_desc {color:' . esc_attr( $page_background_color ) . ';}
         .erm_menu:before {background-color: rgba(' . $background_color_rgb . ',0.5);}
         .erm_menu:not(.type-erm_menu) {border-top-color: ' . $background_color . ';}
+        .ninja-forms-cont {background-color: ' . $background_color . ';}
         ';
 
         // loop over posts

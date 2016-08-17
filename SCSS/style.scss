@@ -2436,13 +2436,21 @@ body.search-no-results .page-header {
 .site-header,
 .site-footer,
 .entry-header,
-.entry-content > *:not(.erm_menu),
+.entry-content > *,
 .erm_menu,
-.erm_menu ul.erm_menu_content {
+.erm_menu ul.erm_menu_content,
+.ninja-forms-form-wrap {
     margin-left: auto !important; /* need to override the plugin’s styles */
     margin-right: auto !important; /* need to override the plugin’s styles */
     padding: 0 15%;
     display: block;
+}
+
+.entry-content {
+    .erm_menu, .ninja-forms-cont {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .erm_menu {
@@ -2471,6 +2479,12 @@ body.search-no-results .page-header {
     }
 
     .erm_footer_desc { border: none; }
+}
+
+.ninja-forms-cont {
+    clear: both;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 /**
