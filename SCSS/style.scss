@@ -2457,6 +2457,7 @@ body.search-no-results .page-header {
     position: relative;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 
     &:before {
         display: block;
