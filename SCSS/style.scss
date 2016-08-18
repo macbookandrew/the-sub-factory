@@ -2818,7 +2818,8 @@ p > video {
     }
 
     .site-header {
-        padding: 3.9375em 7.6923%;
+        padding-top: 3.9375em;
+        padding-bottom: 3.9375em;
     }
 
     .site-branding {
@@ -3004,11 +3005,6 @@ p > video {
  */
 
 @media screen and (min-width: 56.875em) {
-    .site-header {
-        padding-right: 4.5455%;
-        padding-left: 4.5455%;
-    }
-
     .site-header-main {
         -webkit-align-items: flex-start;
         -ms-flex-align: start;
@@ -3431,7 +3427,8 @@ p > video {
     }
 
     .site-header {
-        padding: 5.25em 4.5455%;
+        padding-top: 5.25em;
+        padding-bottom: 5.25em;
     }
 
     .site-branding,
