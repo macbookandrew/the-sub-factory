@@ -33,6 +33,7 @@ function add_custom_css() {
         .erm_product:nth-child(odd) {background-color: rgba(' . $main_text_color_rgb . ', 0.3);}
         .menu-menu li a {background-color: ' . $background_color . '; color: ' . $page_background_color . '}
         .menu-menu li a:hover {background-color: rgba(' . $background_color_rgb . ', 0.5);}
+        div.wpcf7-mail-sent-ok {border-color: ' . $page_background_color . ';}
         ';
 
         // loop over posts
