@@ -1530,10 +1530,6 @@ blockquote:after,
  * 11.0 - Content
  */
 
-.site {
-    background-color: #fff;
-}
-
 .site-inner {
     margin: 0 auto;
     position: relative;
@@ -2432,6 +2428,20 @@ body.search-no-results .page-header {
 /**
  * 11.7 - Menus
  */
+
+.menu-menu {
+    li {
+        list-style-type: none;
+        display: inline-block;
+
+        a {
+            display: block;
+            padding: 0.5em 1em;
+            margin: 0 1em 1em 0;
+            border-radius: 3px;
+        }
+    }
+}
 
 .site-header,
 .site-footer,
