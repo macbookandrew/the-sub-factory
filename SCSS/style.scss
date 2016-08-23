@@ -2449,7 +2449,10 @@ body.search-no-results .page-header {
 .entry-content > *,
 .erm_menu,
 .erm_menu ul.erm_menu_content,
-.ninja-forms-form-wrap {
+.wpcf7-form,
+.content-bottom-widgets,
+.entry-footer,
+.site-footer {
     margin-left: auto !important; /* need to override the plugin’s styles */
     margin-right: auto !important; /* need to override the plugin’s styles */
     padding: 0 15%;
@@ -2457,7 +2460,7 @@ body.search-no-results .page-header {
 }
 
 .entry-content {
-    .erm_menu, .ninja-forms-cont {
+    .erm_menu {
         padding-left: 0;
         padding-right: 0;
     }
@@ -2498,10 +2501,12 @@ body.search-no-results .page-header {
     &_desc { font-size: 14px; }
 }
 
-.ninja-forms-cont {
+div.wpcf7 {
     clear: both;
     padding-top: 2em;
     padding-bottom: 2em;
+
+    h2 { margin-top: 0; }
 }
 
 /**
@@ -3398,7 +3403,7 @@ p > video {
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        padding: 0 4.5455% 3.5em;
+        padding: 0 15% 3.5em;
     }
 
     .site-footer .social-navigation {

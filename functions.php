@@ -28,8 +28,8 @@ function add_custom_css() {
         $custom_styles = '.erm_menu, .erm_product_desc {color:' . $page_background_color . ';}
         .erm_menu:before {background-color: rgba(' . $background_color_rgb . ',0.5);}
         .erm_menu:not(.type-erm_menu) {border-top-color: ' . $background_color . ';}
-        .ninja-forms-cont {background-color: ' . $background_color . '; color: ' . $page_background_color . ';}
-        .ninja-forms-req-symbol {color: ' . $page_background_color . ' !important;}
+        .wpcf7 {background-color: ' . $background_color . '; color: ' . $page_background_color . ';}
+        .wpcf7 a {color: ' . $page_background_color . ';}
         .erm_product:nth-child(odd) {background-color: rgba(' . $main_text_color_rgb . ', 0.3);}
         .menu-menu li a {background-color: ' . $background_color . '; color: ' . $page_background_color . '}
         .menu-menu li a:hover {background-color: rgba(' . $background_color_rgb . ', 0.5);}
