@@ -1658,6 +1658,14 @@ blockquote:after,
     outline: thin dotted;
 }
 
+@media (max-width: 480px) {
+    .site-branding, .menu-toggle {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+}
+
 .header-image {
     clear: both;
     margin: 0.875em 0;
