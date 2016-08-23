@@ -51,6 +51,7 @@ function add_custom_css() {
             }
         }
     }
+    wp_reset_postdata();
 
     wp_add_inline_style( 'theme-style', $custom_styles );
 }
